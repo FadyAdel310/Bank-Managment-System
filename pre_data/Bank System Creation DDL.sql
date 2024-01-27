@@ -42,9 +42,9 @@ create table BANK_ACCOUNTS (
 create table BANK_TRANSACTIONS (
   SENDER_NUM varchar2(7) REFERENCES BANK_ACCOUNTS (ACCOUNT_NUM) ,
   RECEIVER_NUM varchar2(7) REFERENCES BANK_ACCOUNTS (ACCOUNT_NUM) ,
+  TRANSACTION_ID varchar2(5) primary key ,
   AMOUNT NUMBER(7,1) NOT NULL ,
   YEAR number(4) NOT NULL ,
   MONTH number(2) NOT NULL ,
-  DAY number(2) NOT NULL ,
-  primary key (SENDER_NUM,RECEIVER_NUM)
+  DAY number(2) NOT NULL 
 );
