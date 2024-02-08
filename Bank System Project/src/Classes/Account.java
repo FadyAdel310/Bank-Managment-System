@@ -11,6 +11,20 @@ public class Account {
     public String statues;
     public LocalDate startDate;
 
+    
+    public Account(){
+        
+    }
+    public Account(String accountNumber, String type, float balance, String statues, LocalDate startDate) {
+        this.accountNumber = accountNumber;
+        this.type = type;
+        this.balance = balance;
+        this.statues = statues;
+        this.startDate = startDate;
+    }
+
+    
+    
     public String getAccountNumber() {
         return accountNumber;
     }

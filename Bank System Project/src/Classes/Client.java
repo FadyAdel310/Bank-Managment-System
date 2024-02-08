@@ -5,6 +5,15 @@ import java.util.ArrayList;
 public class Client extends Person {
     public String phoneNumber;
     public ArrayList<Account> accounts = new ArrayList();
+
+    public Client() {
+    }
+
+    public Client(String phoneNumber, String id, String firstName, String lastName, String email, String password) {
+        super(id, firstName, lastName, email, password);
+        this.phoneNumber = phoneNumber;
+    }
+    
     
     
     public String generateAccountNum() {
@@ -32,13 +41,30 @@ public class Client extends Person {
     @Override
     public boolean isLogined(String email, String password) {
         for(Client c:Bank.clients){
-            if(c.email.equalsIgnoreCase(email) && c.password.equalsIgnoreCase(password)) {
+            if(c.email.equalsIgnoreCase(email) && c.password.equals(password)) {
                 return true;
             }
         }
         return false;
     } 
    
+    public Account getSpecificAccount(String accountNum) {
+        for(Account ac:accounts) {
+            if(ac.getAccountNumber().equalsIgnoreCase(accountNum)){
+                return ac;
+            }
+        }
+        return null;
+    }
+    
+    public float getTotalBalance() {
+        float sum = 0;
+        for(Account ac:accounts) {
+            sum += ac.balance;
+        }
+        return sum;
+    }
+    
     // operations :
     /*
     1-edit my personal info &show

@@ -1,8 +1,17 @@
 
 package Classes;
 
-class Qualification {
+public class Qualification {
     public String college;
-    public String year;
+    public int year;
     public String grade;
+
+    public Qualification(String college, int year, String grade) {
+        this.college = college;
+        this.year = year;
+        this.grade = grade;
+    }
+    
+    
+    
 }

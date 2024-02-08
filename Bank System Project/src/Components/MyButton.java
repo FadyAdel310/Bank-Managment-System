@@ -71,7 +71,7 @@ public class MyButton extends JButton {
         this.setForeground(MyColor.white);
         this.setRadius(50);
         this.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        this.setFont(new java.awt.Font("Segoe UI Variable", 0, 28));
+        this.setFont(new java.awt.Font("Segoe UI Variable", 0, 24));
         setContentAreaFilled(false);
         //  Add event mouse
         addMouseListener(new MouseAdapter() {
